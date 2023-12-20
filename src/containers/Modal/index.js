@@ -9,7 +9,6 @@ const Modal = ({ opened, Content, children }) => {
   useEffect(() => {
     // Mettre à jour l'état si le prop `opened` change
     setIsOpened(opened);
-    console.log("Modal opened state:", opened);
   }, [opened]);
 
   return (

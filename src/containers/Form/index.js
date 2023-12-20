@@ -15,12 +15,12 @@ const Form = ({ onSuccess, onError }) => {
       setSending(true);
       // We try to call mockContactApi
       try {
-        console.log("Form submitted successfully");
+
         await mockContactApi();
         setSending(false);
         onSuccess(); // Assurez-vous que cette ligne est présente
       } catch (error) {
-        console.error("Error submitting form:", error);
+
         setSending(false);
         onError(error);
       }
