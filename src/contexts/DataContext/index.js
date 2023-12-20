@@ -22,14 +22,16 @@ export const DataProvider = ({ children }) => {
   const getData = useCallback(async () => {
     try {
       setData(await api.loadData());
+      
     } catch (err) {
       setError(err);
     }
   }, []);
   useEffect(() => {
-    if (data) return;
-    getData();
-  });
+    if (!data) {
+      getData();
+    }
+  }, [data, getData]);
   
   return (
     <DataContext.Provider
